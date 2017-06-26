@@ -1,0 +1,21 @@
+{
+  "name": "nightwatch-components-generator",
+  "version": "0.1.1",
+  "description": "Nightwatch components generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "nw": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidBernal/nightwatch-components-geneartor"
+  },
+  "author": "David Bernal",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^3.1.1"
+  }
+}

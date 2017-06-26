@@ -1,0 +1,19 @@
+exports.command = function(file, callback) {
+  var self = this;
+
+  this.execute(
+    function(args) { // execute application specific code
+      
+    },
+
+    [], // arguments array to be passed
+
+    function(result) { // result function
+      if (typeof callback === "function") {
+        callback.call(self, result);
+      }
+    }
+  );
+
+  return this;
+};
