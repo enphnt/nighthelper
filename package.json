@@ -1,6 +1,6 @@
 {
   "name": "nightwatch-components-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nightwatch components generator",
   "main": "index.js",
   "scripts": {
