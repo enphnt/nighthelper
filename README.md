@@ -1,14 +1,11 @@
-# Nightwatch components generator
-
+# Nighthelper: A Nightwatch components generator
 
 Create custom elements with one command
 
 Install
 
-`$ npm install -g nightwatch-components-generator`
+`$ npm install -g nighthelper`
 
 Run command
 
-`$ nw`
-
-![Image](/image.jpg)
+`$ nighthelper`
