@@ -8,8 +8,8 @@ let CONFIG;
 
 console.log(CURR_DIR);
 try {
-  CONFIG = require( CURR_DIR + '/config/nightwatch.json');
-} catch(err){
+  CONFIG = require(CURR_DIR + '/config/nightwatch.json');
+} catch (err) {
   console.log(err);
   CONFIG = {};
 }
@@ -19,6 +19,7 @@ const PATHS = {
   assertion: CONFIG.custom_assertions_path,
   page: CONFIG.page_objects_path
 }
+
 const QUESTIONS = [
   {
     name: 'component-choice',
@@ -43,9 +44,9 @@ inquirer.prompt(QUESTIONS)
     const componentChoice = answers['component-choice'];
     const componentName = answers['component-name'] + (answers['component-name'].substr(-3) === '.js' ? '' : '.js');
     const templatePath = `${__dirname}/templates/${componentChoice}`;
-    outputDir = PATHS[componentChoice] || CURR_DIR;
-  
-    if (!fs.existsSync(outputDir)){
+    outputDir = PATHS[componentChoice] || `${CURR_DIR}/${componentChoice}s`;
+
+    if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir);
     }
 
@@ -53,7 +54,11 @@ inquirer.prompt(QUESTIONS)
   });
 
 function createDirectoryContents (templatePath, newComponentPath) {
-  fs.createReadStream(templatePath).pipe(fs.createWriteStream(`${outputDir}/${newComponentPath}`)).on('close', function(){
-    console.log('Finished')
-  });
+  fs.createReadStream(templatePath)
+    .pipe(fs.createWriteStream(`${outputDir}/${newComponentPath}`))
+    .on('close', function () {
+      console.log(`
+      Finished.
+      Created: ${outputDir}/${newComponentPath}`)
+    });
 }
