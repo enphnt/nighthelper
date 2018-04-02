@@ -1,0 +1,31 @@
+module.exports = {
+  before: (client) => {
+    console.log("Setting up...");
+  },
+
+  after: (client) => {
+    console.log("Closing down...");
+    client.end();
+  },
+
+  beforeEach: (client) => {
+
+  },
+
+  afterEach: () => {
+
+  },
+
+  "step one": (client) => {
+    client
+      // ...
+      .click("body");
+  },
+
+  "step two": (client) => {
+    client
+      // ...
+      .click("button");
+
+  }
+};

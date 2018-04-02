@@ -1,0 +1,20 @@
+module.exports = {
+  sections: {
+    menu: {
+      selector: "#navBar button",
+      elements: {
+        mail: {
+          selector: "a[href*='mail']"
+        },
+        images: {
+          selector: "a[href*='imghp']"
+        }
+      },
+      commands: [{
+        clickMail() {
+          this.click("@mail");
+        }
+      }]
+    }
+  }
+};
