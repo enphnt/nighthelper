@@ -4,6 +4,7 @@
   "description": "Nightwatch components generator",
   "main": "index.js",
   "scripts": {
+    "debug": "node --inspect-brk index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
